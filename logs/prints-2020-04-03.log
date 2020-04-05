@@ -1,0 +1,7 @@
+20:15:57.751 [main] INFO  ins.geico.resources.base - Driver is initilized
+20:16:05.529 [main] INFO  ins.geico.resources.base - Navigate to home page
+20:16:07.056 [main] INFO  ins.geico.resources.base - Case 2 is Running
+20:16:12.750 [main] INFO  ins.geico.resources.base - User is sending UserId
+20:16:15.969 [main] INFO  ins.geico.resources.base - User is sending password
+20:43:41.125 [main] INFO  ins.geico.resources.base - Driver is initilized
+20:43:46.199 [main] INFO  ins.geico.resources.base - Navigate to home page

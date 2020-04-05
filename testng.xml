@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Default Test">
+    <classes>
+      <class name="getCode.Geico.AppTest"/>
+    </classes>
+  </test> 
+  
+  <test thread-count="5" name="Home">
+    <classes>
+      <class name="getCode.Geico.HomePage"/>
+    </classes>
+  </test>
+  
+  <test thread-count="5" name="Homelogin">
+    <classes>
+      <class name="getCode.Geico.HomePageLogIn"/>
+    </classes>
+  </test>
+</suite> 
