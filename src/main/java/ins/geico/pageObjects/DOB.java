@@ -1,15 +1,18 @@
 package ins.geico.pageObjects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import ins.geico.management.Utilities;
+import ins.geico.resources.base;
 import junit.framework.Assert;
 
 public class DOB {
-
+	public static Logger log=LogManager.getLogger(base.class.getName());
 	public WebDriver driver;
 	public DOB(WebDriver driver2) {
 		this.driver = driver2;
@@ -29,9 +32,11 @@ public class DOB {
 		
 		Utilities.AssertionTitle(driver.getCurrentUrl(), "https://auto-buy.geico.com/nb#/sale/customerinformation/gskmsi?brkq=1");
 		Utilities.sendKey(mon, "10");
+		log.info("User is giving birth month");
 		Utilities.sendKey(dat, "25");
 		Utilities.sendKey(yer, "1981");
 		Utilities.clickButton(nxt);
+		
 	}
 
 }
