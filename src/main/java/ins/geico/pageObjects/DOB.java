@@ -34,7 +34,9 @@ public class DOB {
 		Utilities.sendKey(mon, "10");
 		log.info("User is giving birth month");
 		Utilities.sendKey(dat, "25");
+		log.info("User is giving birth month");
 		Utilities.sendKey(yer, "1981");
+		log.info("User is sending birth year");
 		Utilities.clickButton(nxt);
 		
 	}

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="getCode.Geico.HomePageLogIn">
+      <class name="getCode.Geico.ActiondDemo">
         <methods>
-          <include name="initialize"/>
-          <include name="getCode"/>
           <include name="teardown"/>
+          <include name="information"/>
+          <include name="initialize"/>
         </methods>
-      </class> <!-- getCode.Geico.HomePageLogIn -->
+      </class> <!-- getCode.Geico.ActiondDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
