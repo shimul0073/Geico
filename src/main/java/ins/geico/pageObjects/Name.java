@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import ins.geico.ObjectRepository.OR_Name;
 import ins.geico.management.Utilities;
 import ins.geico.management.Wait;
 import ins.geico.resources.base;
@@ -20,22 +21,21 @@ public class Name {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id = "firstName")
+	@FindBy(id = OR_Name.OR_NAME_FIRSTNAME_TEXTBOX)
 	WebElement fname;
 
-	@FindBy(id = "lastName")
+	@FindBy(id = OR_Name.OR_NAME_LASTNAME_TEXTBOX )
 	WebElement laname;
 
-	@FindBy(xpath = "//html//body//div//section//div//div//div//div//div//div//form//div//div//div//div//div//div//div//div//div//div//div//div//button[contains(text(),'Next')]")
+	@FindBy(xpath = OR_Name.OR_NAME_NEXT_BUTTON )
 	WebElement nextbtn;
 
 	public void NameMethod() throws InterruptedException {
 		
-		log.info("Entering First Name");
-		Utilities.sendKey(fname, "Towha");
-		log.info("Entering Last Name");
-		Utilities.sendKey(laname, "Mona");
-		Utilities.clickButton(nextbtn);
+		
+		Utilities.sendKey(log, fname, "Jhon", OR_Name.S_NAME_FIRSTNAME_TEXTBOX);
+		Utilities.sendKey(log, laname, "Marshal", OR_Name.S_NAME_LASTNAME_TEXTBOX);
+		Utilities.clickButton(log, nextbtn, OR_Name.S_NAME_NEXT_BUTTON);
 		Thread.sleep(5000);
 		
 		//Wait.explicitWaitInvisisbility(driver, nextbtn);

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import ins.geico.ObjectRepository.OR_StartCode;
 import ins.geico.management.Utilities;
 import ins.geico.resources.base;
 
@@ -18,20 +20,22 @@ public class StartCode {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = ("//div//div//div//div//div//div//div[3]//div[1]//input[1]"))
+	@FindBy(xpath = (OR_StartCode.OR_STARTCODE_ZIPCODE_TEXTBOX ))
 	WebElement zipcode;
-	@FindBy(xpath = ("//*[@id=\'cookie-notice-close\']"))
+	@FindBy(xpath = (OR_StartCode.OR_ACCEPT_COOKIES_BUTTON))
 	WebElement acceptCookies;
-	@FindBy(xpath = ("//button[contains(text(),'Start Quote')]"))
+	@FindBy(xpath = (OR_StartCode.OR_BEGIN_QUOTE_BUTTON))
 	WebElement clickCode;
+	
+	@FindBy(xpath = ("//*[@id=\"bundleSave\"]"))
+	WebElement bundle;
 
 	public void startCode() {
         
-		log.info("Entering Zip Code");
-		Utilities.sendKey(zipcode, "22041");
-		log.info("Accepting cookies");
-		Utilities.clickButton(acceptCookies);
-		Utilities.clickButton(clickCode);
+		
+		Utilities.sendKey(log,zipcode, "22041", OR_StartCode.S_STARTCODE_ZIPCODE_TEXTBOX);
+		Utilities.clickButton(log,acceptCookies,OR_StartCode.S_ACCEPT_COOKIES_BUTTON);
+		Utilities.clickButton(log, clickCode, OR_StartCode.S_BEGIN_QUOTE_BUTTON);
 
 	}
 }

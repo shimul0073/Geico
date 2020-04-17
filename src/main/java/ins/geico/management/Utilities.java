@@ -1,5 +1,7 @@
 package ins.geico.management;
 
+
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,25 +11,27 @@ import junit.framework.Assert;
 
 public class Utilities {
 
-	public static void clickButton(WebElement element) {
+	public static void clickButton(Logger log, WebElement element, String ButtonName) {
 		element.click();
+		log.info(ButtonName + " Clicked");
 	}
 
-	public static void sendKey(WebElement element, String inputText) {
+	public static void sendKey(Logger log,WebElement element, String inputText,String TextBoxName) {
 		element.clear();
 		element.sendKeys(inputText);
+		log.info("Input Text Sent to "+ TextBoxName + " Successfully");
 	}
 
-	public static String getTxt(WebElement element) {
-		return element.getText();
+	public static void getTxt(WebElement element) {
+		element.getText();
 
 	}
 
-	public static void selectDropdown(WebElement element, String inputText) {
+	public static void selectDropdown(Logger log,WebElement element, String inputText, String Item) {
 
 		Select select = new Select(element);
 		select.selectByVisibleText(inputText);
-
+		log.info(Item + " Selected Successfully");
 	}
 
 	public static void AssertionTitle(String element, String title) {
@@ -41,11 +45,17 @@ public class Utilities {
 
 	}
 
-	public static void doubleClick(WebDriver driver, WebElement element) {
+	public static void Click(WebDriver driver, WebElement element) {
 
 		Actions action = new Actions(driver);
 		action.click(element).build().perform();;
 
 	}
+	
+	public static void RightClick(WebDriver driver, WebElement element) {
 
+		Actions action = new Actions(driver);
+		action.contextClick(element).build().perform();
+
+	}
 }

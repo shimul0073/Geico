@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import ins.geico.ObjectRepository.OR_Vehicle;
 import ins.geico.management.Utilities;
 import ins.geico.resources.base;
 
@@ -20,40 +21,37 @@ public class Vehicle {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	@FindBy(name="vehicleYear")
+
+	@FindBy(name=OR_Vehicle.OR_VEHICLE_SELECTYEAR_TEXTBOX)
 	WebElement selt_year;
 	
-	@FindBy(xpath="//div[8]//div[1]//div[3]//div[1]//select[1]")
+	@FindBy(xpath=OR_Vehicle.OR_VEHICLE_SELECTMAKE_TEXTBOX)
 	WebElement veh_make;
 	
-	@FindBy(xpath="//div[14]//div[1]//div[3]//div[1]//select[1]")
+	@FindBy(xpath=OR_Vehicle.OR_VEHICLE_SELECTMODEL_TEXTBOX)
 	WebElement veh_model;
 	
-	@FindBy(xpath="//html//body//div//section//div//div//div//div//div//div//form//div//div//div//div//div//div//div//div//div//div//div//div//button[contains(text(),'Next')]")
+	@FindBy(xpath=(OR_Vehicle.OR_VEHICLE_NEXT_BUTTON))
 	WebElement nxtbutton;
 	
-	@FindBy(xpath="/html[1]/body[1]/div[3]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]")
+	@FindBy(xpath=(OR_Vehicle.OR_VEHICLE_OWNER_BUTTON))
 	WebElement ownr;
 	
-	@FindBy(xpath="//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[1]//label[1]")
+	@FindBy(xpath=(OR_Vehicle.OR_VEHICLE_USE_BUTTON))
 	WebElement use;
 	
 	
 	public void VehicleType() throws InterruptedException {
 		
 		Thread.sleep(5000);
-		log.info("Selecting car year");
-		Utilities.selectDropdown(selt_year, "2015");
-		log.info("Selecting car Make");
-		Utilities.selectDropdown(veh_make, "BMW");
-		log.info("Selecting car Model");
-		Utilities.selectDropdown(veh_model, "328D");
+		Utilities.selectDropdown(log, selt_year, "2016", OR_Vehicle.S_VEHICLE_SELECTYEAR_TEXTBOX);		
+		Utilities.selectDropdown(log, veh_make, "BMW", OR_Vehicle.S_VEHICLE_SELECTMAKE_TEXTBOX);	
+		Utilities.selectDropdown(log, veh_model, "328D", OR_Vehicle.S_SELECTMODEL_TEXTBOX);
 		Thread.sleep(5000);
-		Utilities.clickButton(nxtbutton);
-		Utilities.clickButton(ownr);
+		Utilities.clickButton(log, nxtbutton, OR_Vehicle.S_VEHICLE_NEXT_BUTTON);
+		Utilities.clickButton(log, ownr, OR_Vehicle.S_VEHICLE_OWNER_BUTTON);
 		Thread.sleep(5000);
-		Utilities.clickButton(use);
+		Utilities.clickButton(log, use, OR_Vehicle.S_VEHICLE_USE_BUTTON);
 	}
 }
 

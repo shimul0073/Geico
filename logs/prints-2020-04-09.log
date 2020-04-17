@@ -1,0 +1,6 @@
+20:59:40.743 [main] INFO  ins.geico.resources.base - Input Text Sent to ZipCode Successfully
+20:59:40.942 [main] INFO  ins.geico.resources.base - Accept Cookies Button Clicked
+20:59:41.133 [main] INFO  ins.geico.resources.base - Begin Quote Button Clicked
+21:24:38.025 [main] INFO  ins.geico.resources.base - Driver is initilized
+21:24:44.095 [main] INFO  ins.geico.resources.base - Navigate to home page
+21:24:44.963 [main] INFO  ins.geico.resources.base - Input Text Sent to ZipCode TextBox Successfully

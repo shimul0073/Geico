@@ -35,6 +35,6 @@ public class HomePageLogIn extends base {
 	@AfterTest
 	public void teardown() throws InterruptedException {
 		Thread.sleep(5000);
-		driver.close();
+		driver.quit();
 	}
 }

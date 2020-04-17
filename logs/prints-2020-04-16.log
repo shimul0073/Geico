@@ -1,0 +1,6 @@
+20:28:15.694 [main] INFO  ins.geico.resources.base - vehicleYear Selected Successfully
+20:28:16.466 [main] INFO  ins.geico.resources.base - //div[8]//div[1]//div[3]//div[1]//select[1] Selected Successfully
+20:28:17.239 [main] INFO  ins.geico.resources.base - //div[14]//div[1]//div[3]//div[1]//select[1] Selected Successfully
+20:28:22.458 [main] INFO  ins.geico.resources.base - Next Button Clicked
+20:28:23.289 [main] INFO  ins.geico.resources.base - Owner Button Clicked
+20:28:28.629 [main] INFO  ins.geico.resources.base - Use Button Clicked

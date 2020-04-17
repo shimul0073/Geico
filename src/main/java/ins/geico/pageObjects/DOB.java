@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import ins.geico.ObjectRepository.OR_DOB;
 import ins.geico.management.Utilities;
 import ins.geico.resources.base;
 import junit.framework.Assert;
@@ -19,25 +20,22 @@ public class DOB {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy (xpath="//body//div//form//input[1]")
+	@FindBy (xpath=OR_DOB.OR_DOB_MON_TEXTBOX)
 	WebElement mon;
-	@FindBy (xpath="//body//div//form//input[2]")
+	@FindBy (xpath=OR_DOB.OR_DOB_DATE_TEXTBOX)
 	WebElement dat;
-	@FindBy (xpath="//body//div//form//input[3]")
+	@FindBy (xpath=OR_DOB.OR_DOB_YEAR_TEXTBOX)
 	WebElement yer;
-	@FindBy (xpath="//html//body//div//section//div//div//div//div//div//div//form//div//div//div//div//div//div//div//div//div//div//div//div//button[contains(text(),'Next')]")
+	@FindBy (xpath=OR_DOB.OR_DOB_NEXT_BUTTON)
 	WebElement nxt;
 	
 	public void dateOfBirth() {
 		
 		Utilities.AssertionTitle(driver.getCurrentUrl(), "https://auto-buy.geico.com/nb#/sale/customerinformation/gskmsi?brkq=1");
-		Utilities.sendKey(mon, "10");
-		log.info("User is giving birth month");
-		Utilities.sendKey(dat, "25");
-		log.info("User is giving birth month");
-		Utilities.sendKey(yer, "1981");
-		log.info("User is sending birth year");
-		Utilities.clickButton(nxt);
+		Utilities.sendKey(log, mon, "5", OR_DOB.S_DOB_MON_TEXTBOX);
+		Utilities.sendKey(log, dat, "6", OR_DOB.S_DOB_DATE_TEXTBOX);
+		Utilities.sendKey(log, yer, "1980", OR_DOB.OR_DOB_YEAR_TEXTBOX);
+		Utilities.clickButton(log, nxt, OR_DOB.S_DOB_NEXT_BUTTON);
 		
 	}
 

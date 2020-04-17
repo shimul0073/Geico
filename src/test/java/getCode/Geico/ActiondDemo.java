@@ -39,10 +39,15 @@ public class ActiondDemo extends base {
 		WebElement move = driver.findElement(By.xpath("/html[1]/body[1]/nav[1]/div[2]/ul[1]/li[1]/a[1]"));
 		Wait.explicitWaitVisibility(driver, move);
 		Utilities.mouseOver(driver, move);
+		Utilities.RightClick(driver, move);
 
-		// Actions action = new Actions(driver);
-		// action.moveToElement(move).build().perform();
+//		 Actions action = new Actions(driver);
+//		 action.moveToElement(move).build().perform();
 
+		
+		
+		
+		
 	}
 
 	@AfterTest

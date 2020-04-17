@@ -39,12 +39,12 @@ public class HomePage extends base {
 	    StartCode startcode= new StartCode(driver);
 		startcode.startCode();
 		
-/*		AutoType autoType = new AutoType(driver);
+	    AutoType autoType = new AutoType(driver);
 		autoType.autoChoice();
 		
 		DOB dob = new DOB(driver);
 		dob.dateOfBirth();
-
+		
 		Name name = new Name(driver);
 		name.NameMethod();
 
@@ -57,13 +57,13 @@ public class HomePage extends base {
 
 		Commute commute = new Commute(driver);
 		commute.commuteType();
-		*/
+		
 	}
 
 	@AfterTest
 	public void teardown() throws InterruptedException{
 		Thread.sleep(5000);
-		driver.close();
+		driver.quit();
 	}
 
 }
