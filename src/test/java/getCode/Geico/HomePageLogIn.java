@@ -31,6 +31,14 @@ public class HomePageLogIn extends base {
 		accesspolicy.policyAccess();
 
 	}
+	
+	@Test
+	public void getCodeDuplicate() throws InterruptedException, IOException {
+
+		AccessPolicy accesspolicy = new AccessPolicy(driver);
+		accesspolicy.policyAccess();
+
+	}
 
 	@AfterTest
 	public void teardown() throws InterruptedException {
