@@ -23,7 +23,7 @@ public class HomePageLogIn extends base {
 		driver.get(prop.getProperty("url"));
 		log.info("Navigate to home page");
 	}
-
+// this is test 
 	@Test
 	public void getCode() throws InterruptedException, IOException {
 
